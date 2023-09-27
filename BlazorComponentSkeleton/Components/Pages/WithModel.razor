@@ -1,9 +1,10 @@
 ﻿@page "/"
 @attribute [RenderModeServer]
 
+<PageTitle>With Model</PageTitle>
 <h3>With Model</h3>
+
 <EditForm Model="@_model">
-    <PageTitle>Home</PageTitle>
 
     <FlipFlop @bind-Value="_model.Value" />
 

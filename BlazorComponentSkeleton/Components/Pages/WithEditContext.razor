@@ -1,9 +1,10 @@
 ﻿@page "/editcontext"
 @attribute [RenderModeServer]
 
-<h3>With Model</h3>
+<PageTitle>With EditContext</PageTitle>
+<h3>With EditContext</h3>
+
 <EditForm EditContext="@_editContext">
-    <PageTitle>Home</PageTitle>
 
     <FlipFlop @bind-Value="@_model!.Value" />
 

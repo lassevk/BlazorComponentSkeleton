@@ -9,23 +9,23 @@ public partial class FlipFlop
 {
     [CascadingParameter]
     public EditContext? CascadedEditContext { get; set; }
-    
+
     [Parameter]
     public bool Value { get; set; }
-    
+
     [Parameter]
     public EventCallback<bool>? ValueChanged { get; set; }
-    
+
     [Parameter]
     public Expression<Func<bool>>? ValueExpression { get; set; }
 
     private FieldIdentifier? _fieldIdentifier;
-    
+
     protected override Task OnInitializedAsync()
     {
         if (CascadedEditContext != null && ValueExpression != null)
             _fieldIdentifier = FieldIdentifier.Create(ValueExpression);
-        
+
         return base.OnInitializedAsync();
     }
 
@@ -33,6 +33,8 @@ public partial class FlipFlop
     {
         if (ValueChanged != null)
             await ValueChanged.Value.InvokeAsync(true);
+        else
+            Value = true;
 
         if (CascadedEditContext != null && _fieldIdentifier != null)
             CascadedEditContext?.NotifyFieldChanged(_fieldIdentifier.Value);
@@ -42,6 +44,8 @@ public partial class FlipFlop
     {
         if (ValueChanged != null)
             await ValueChanged.Value.InvokeAsync(false);
+        else
+            Value = false;
 
         if (CascadedEditContext != null && _fieldIdentifier != null)
             CascadedEditContext?.NotifyFieldChanged(_fieldIdentifier.Value);

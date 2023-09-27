@@ -1,0 +1,13 @@
+﻿@page "/unbound"
+@attribute [RenderModeServer]
+
+<PageTitle>Unbound</PageTitle>
+<h3>Unbound</h3>
+
+<FlipFlop @ref="@_ref" />
+
+<hr/>
+
+<p>Value: @_ref?.Value</p>
+
+<button @onclick="StateHasChanged">Update</button>
