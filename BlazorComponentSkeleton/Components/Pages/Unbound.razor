@@ -9,5 +9,9 @@
 <hr/>
 
 <p>Value: @_ref?.Value</p>
+<hr/>
+
+<button @onclick="SetTrue">@(_ref?.Value ?? false ? "TRUE" : "true")</button>
+<button @onclick="SetFalse">@(_ref?.Value ?? false ? "false" : "FALSE")</button>
 
 <button @onclick="StateHasChanged">Update</button>

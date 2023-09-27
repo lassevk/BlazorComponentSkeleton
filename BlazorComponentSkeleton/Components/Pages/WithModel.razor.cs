@@ -2,5 +2,15 @@
 
 public partial class WithModel
 {
-    public Model _model = new Model();
+    private readonly Model _model = new Model();
+
+    private void SetTrue()
+    {
+        _model.Value = true;
+    }
+
+    private void SetFalse()
+    {
+        _model.Value = false;
+    }
 }

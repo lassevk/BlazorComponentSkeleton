@@ -13,6 +13,10 @@
     <p>Value: @_model.Value</p>
     <p>Changed: @context.IsModified()</p>
 
+    <hr/>
+
+    <button @onclick="SetTrue">@(_model?.Value ?? false ? "TRUE" : "true")</button>
+    <button @onclick="SetFalse">@(_model?.Value ?? false ? "false" : "FALSE")</button>
 </EditForm>
 
 <button @onclick="StateHasChanged">Update</button>

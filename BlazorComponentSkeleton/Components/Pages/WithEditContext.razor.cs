@@ -4,12 +4,21 @@ namespace BlazorComponentSkeleton.Components.Pages;
 
 public partial class WithEditContext
 {
+    private readonly Model _model = new();
     private EditContext? _editContext;
-    private Model? _model;
 
     protected override void OnInitialized()
     {
-        _model ??= new Model();
         _editContext = new EditContext(_model);
+    }
+
+    private void SetTrue()
+    {
+        _model.Value = true;
+    }
+
+    private void SetFalse()
+    {
+        _model.Value = false;
     }
 }
