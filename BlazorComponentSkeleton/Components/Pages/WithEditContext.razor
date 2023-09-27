@@ -1,0 +1,17 @@
+﻿@page "/editcontext"
+@attribute [RenderModeServer]
+
+<h3>With Model</h3>
+<EditForm EditContext="@_editContext">
+    <PageTitle>Home</PageTitle>
+
+    <FlipFlop @bind-Value="@_model!.Value" />
+
+    <hr/>
+
+    <p>Value: @_model?.Value</p>
+    <p>Changed: @_editContext?.IsModified()</p>
+
+</EditForm>
+
+<button @onclick="StateHasChanged">Update</button>

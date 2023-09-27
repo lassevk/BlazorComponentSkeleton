@@ -1,0 +1,13 @@
+﻿@page "/outside"
+@attribute [RenderModeServer]
+
+<PageTitle>Home</PageTitle>
+<h3>With Model</h3>
+
+<FlipFlop @bind-Value="_value" />
+
+<hr/>
+
+<p>Value: @_value</p>
+
+<button @onclick="StateHasChanged">Update</button>

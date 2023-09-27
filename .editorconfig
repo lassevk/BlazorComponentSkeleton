@@ -1,0 +1,21 @@
+﻿root = true
+
+[*]
+tab_width = 4
+indent_size = 4
+indent_style = space
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+[*.{xml,js,css,json,yml}]
+tab_width = 2
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+insert_final_newline = true
+
+[*.cs]
+# CS8618: Non-nullable field must contain a non-null value when exiting constructor. Consider declaring as nullable.
+dotnet_diagnostic.CS8618.severity = none
